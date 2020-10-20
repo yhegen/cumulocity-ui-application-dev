@@ -1,0 +1,36 @@
+<div class="row">
+  <h1>List containers</h1>
+</div>
+
+<div class="row">
+  <div class="card-group interact-grid"> 
+    <div *ngFor="let container of containers">
+      <div class="col-md-4">
+        <div class="card" name="my-card">
+          <div class="card-header separator">
+            <img
+              src="https://banner2.cleanpng.com/20180624/ury/kisspng-docker-computer-icons-jenkins-software-testing-5b2fad179badc5.8306641715298511596377.jpg"
+              height="42px"
+              class="d-inline-block align-top"
+              alt=""
+            />
+            <h4 class="card-title pl-4" style="text-transform: uppercase; padding-left: 0.5em;">
+              {{container.name }}
+            </h4>
+          </div>
+          <div class="card-block text-left p-4">
+            <p class="card-text"><b>CPU:</b> {{ container.cpu }}%</p>
+            <p class="card-text"><b>RAM:</b> {{ container.memory }} MB</p>
+            <p class="card-text"><b>Container ID:</b> {{ container.containerID }}</p>
+            <p class="card-text"><b>Status:</b> {{ container.status }}</p>
+          </div>
+          <div class="card-footer text-right">
+            <button id="restart-btn" (click)="restart(container)" type="button" class="btn btn-outline-secondary py-5">
+              <i class="fa fa-refresh"></i> Restart
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
